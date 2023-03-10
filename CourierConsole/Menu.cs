@@ -11,14 +11,14 @@ public class Menu
 
 	public void Display(string title = "Select an option:")
 	{
-		Console.Clear();
-
 		// get the max width of an option number
 		// 1-9 -> 1, 10-99 -> 2, 100-999 -> 3, etc.
 		var optionWidth = Options.Count.ToString().Length;
 
 		while (true)
 		{
+			Console.Clear();
+
 			// display the menu title
 			Console.WriteLine(title);
 
@@ -43,9 +43,6 @@ public class Menu
 					return;
 				}
 			}
-
-			// if the input is invalid, display an error message and retry
-			Console.WriteLine("Invalid input.");
 		}
 	}
 }

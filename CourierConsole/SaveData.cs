@@ -48,11 +48,27 @@ public class SaveData
 	public void RegisterNewIcon(Player player)
 	{
 		Console.Clear();
-		Console.WriteLine("Input a new icon's name:");
-		var name = Console.ReadLine();
-		player.Icons.Add(new(name));
+
+		Console.WriteLine("Every Icon begins as a non-magical, low-tech inanimate object.");
+		Console.WriteLine("For the best results, it should be something that can be easily carried.");
+		Console.WriteLine("Your Icon must be described by a single noun.");
+		Console.WriteLine("For example, \"sword,\" \"book,\" or \"fishing rod.\"");
+		Console.Write("This icon is a ");
+		var item = Console.ReadLine();
+
+		Console.WriteLine("An Icon gains its power when it becomes widely associated with a specific ideal.");
+		Console.WriteLine("For the best results, choose an ideal that you want to promote and embody in the game world.");
+		Console.WriteLine("Your ideal must be three words at most.");
+		Console.WriteLine("For example, \"protecting innocent lives\" or \"scientific advancement.\"");
+		Console.Write("This icon represents ");
+		var ideal = Console.ReadLine();
+
+		var newIcon = new Icon(item, ideal);
+		player.Icons.Add(newIcon);
+
 		Save();
-		Console.WriteLine($"{name} has been registered for {player.Name}.");
+
+		Console.WriteLine($"{newIcon.ToString()} has been registered for {player.Name}.");
 		Console.ReadKey();
 	}
 }

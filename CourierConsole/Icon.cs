@@ -2,10 +2,17 @@ namespace CourierConsole;
 
 public class Icon
 {
-	public string Name { get; set; }
+	public string Item { get; set; }
+	public string Ideal { get; set; }
 
-	public Icon(string name)
+	public override string ToString()
 	{
-		Name = name;
+		return $"the {Item} of {Ideal}";
+	}
+
+	public Icon(string item, string ideal)
+	{
+		Item = item;
+		Ideal = ideal;
 	}
 }
