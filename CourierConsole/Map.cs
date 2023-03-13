@@ -54,7 +54,7 @@ public class Map
 					// (or rather, between (x, y) and (x + scale, y + scale))
 					// and get the top 3 in terms of draw priority
 					var items = Items?
-							   .Where(i => i.X >= x && i.X <= x + scale && i.Y >= y && i.Y <= y + scale)
+							   .Where(i => i.X >= x && i.X < x + scale && i.Y >= y && i.Y < y + scale)
 							   .OrderByDescending(i => i.DrawPriority)
 							   .Take(3);
 
