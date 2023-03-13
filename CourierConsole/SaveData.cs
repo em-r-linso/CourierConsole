@@ -2,6 +2,7 @@ using Newtonsoft.Json;
 
 namespace CourierConsole;
 
+[JsonObject(MemberSerialization.OptIn)]
 public class SaveData
 {
 	public SaveData()
@@ -22,9 +23,11 @@ public class SaveData
 
 		// if the file doesn't exist or the data is invalid, instantiate new data
 		Players ??= new();
+		Map     ??= new(150);
 	}
 
-	public List<Player>? Players { get; set; }
+	[JsonProperty] public List<Player>? Players { get; private set; }
+	[JsonProperty] public Map?          Map     { get; private set; }
 
 	// save the game data to a json file
 	// a path can be specified to save to a different file if necessary

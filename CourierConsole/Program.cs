@@ -8,10 +8,14 @@ internal static class Program
 
 	static void Main(string[] args)
 	{
-		BigTitle();
+		//BigTitle();
 
 		// load save data
 		Data = new();
+
+		// show map
+		Data.Map.PlaceOnMap(new PlayerGroup());
+		Data.Map.Display();
 
 		// select players
 		ActivePlayers = new();
@@ -61,7 +65,7 @@ internal static class Program
 				// choose from this player's existing icons
 				foreach (var icon in player.Icons)
 				{
-					options.Add(($"Choose {icon.Item}", () =>
+					options.Add(($"Choose {icon.ToString()}", () =>
 								    {
 									    ActiveIcons.Add(icon);
 									    done = true;
@@ -72,7 +76,7 @@ internal static class Program
 				options.Add(("Register new icon", () => { Data.RegisterNewIcon(player); }));
 
 				var iconMenu = new Menu(options);
-				iconMenu.Display("Choose today's Icon for" + player.Name +":");
+				iconMenu.Display($"Choose an icon for {player.Name}:");
 			}
 		}
 

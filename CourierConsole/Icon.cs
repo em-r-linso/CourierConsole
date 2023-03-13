@@ -1,9 +1,12 @@
+using Newtonsoft.Json;
+
 namespace CourierConsole;
 
+[JsonObject(MemberSerialization.OptIn)]
 public class Icon
 {
-	public string Item { get; set; }
-	public string Ideal { get; set; }
+	[JsonProperty] string Item { get; set; }
+	[JsonProperty] string Ideal { get; set; }
 
 	public override string ToString()
 	{
