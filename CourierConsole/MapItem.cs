@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 namespace CourierConsole;
 
 [JsonObject(MemberSerialization.OptIn)]
-public class MapIem
+public class MapItem
 {
-	public MapIem(int x = 0, int y = 0, int drawPriority = 0, char character = '?')
+	public MapItem(int x = 0, int y = 0, int drawPriority = 0, char character = '?')
 	{
 		Position     = (x, y);
 		DrawPriority = drawPriority;

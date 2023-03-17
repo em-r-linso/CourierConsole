@@ -14,7 +14,6 @@ internal static class Program
 		Data = new();
 
 		// show map
-		Data.Map.PlaceOnMap(new PlayerGroup());
 		Data.Map.Display();
 
 		// select players

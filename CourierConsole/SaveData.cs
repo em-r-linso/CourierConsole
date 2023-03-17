@@ -26,8 +26,8 @@ public class SaveData
 		Map     ??= new(150);
 	}
 
-	[JsonProperty] public List<Player>? Players { get; private set; }
-	[JsonProperty] public Map?          Map     { get; private set; }
+	[JsonProperty] public List<Player>? Players     { get; private set; }
+	[JsonProperty] public Map?          Map         { get; private set; }
 
 	// save the game data to a json file
 	// a path can be specified to save to a different file if necessary
@@ -59,6 +59,9 @@ public class SaveData
 		Console.Write("This icon is a ");
 		var item = Console.ReadLine();
 
+		Console.Clear();
+		Console.WriteLine($"This Icon is a {item}.");
+
 		Console.WriteLine("An Icon gains its power when it becomes widely associated with a specific ideal.");
 		Console.WriteLine("For the best results, choose an ideal that you want to promote and embody in the game world.");
 		Console.WriteLine("Your ideal must be three words at most.");
@@ -71,6 +74,7 @@ public class SaveData
 
 		Save();
 
+		Console.Clear();
 		Console.WriteLine($"{newIcon.ToString()} has been registered for {player.Name}.");
 		Console.ReadKey();
 	}

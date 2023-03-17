@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 namespace CourierConsole;
 
 [JsonObject(MemberSerialization.OptIn)]
-public class PlayerGroup : MapIem
+public class PlayerGroup : MapItem
 {
 	public PlayerGroup()
 	{
